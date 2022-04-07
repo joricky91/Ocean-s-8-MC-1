@@ -10,18 +10,18 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchResultsUpdating {
     
     @IBOutlet weak var table: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
     
     struct Bookmark {
         let imageName: String
         let location: String
         let movie: String
+        let book: Bool
     }
     
     let data: [Bookmark] = [
-        Bookmark(imageName: "tokyo", location: "Tokyo", movie: "Kimi no na Wa"),
-        Bookmark(imageName: "indonesia", location: "Indonesia", movie: "Laskar Pelangi"),
-        Bookmark(imageName: "korea", location: "Korea", movie: "Drakor")
+        Bookmark(imageName: "tokyo", location: "Tokyo", movie: "Kimi no na Wa", book: true),
+        Bookmark(imageName: "indonesia", location: "Indonesia", movie: "Laskar Pelangi", book: false),
+        Bookmark(imageName: "korea", location: "Korea", movie: "Drakor", book: false)
     ]
     
     var filteredData: [Bookmark]!

@@ -16,6 +16,7 @@
 		510D71AF27FAE6FC00C16F3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 510D71AE27FAE6FC00C16F3A /* Assets.xcassets */; };
 		510D71B227FAE6FC00C16F3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 510D71B027FAE6FC00C16F3A /* LaunchScreen.storyboard */; };
 		5122E32427FAE9A40036E46C /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E32327FAE9A40036E46C /* CustomTableViewCell.swift */; };
+		5133922827FEB05D00FC9087 /* Bookmark.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5133922727FEB05D00FC9087 /* Bookmark.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		510D71B127FAE6FC00C16F3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		510D71B327FAE6FC00C16F3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5122E32327FAE9A40036E46C /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		5133922727FEB05D00FC9087 /* Bookmark.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Bookmark.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				510D71AB27FAE6FB00C16F3A /* Main.storyboard */,
 				2EF2814E27FEA7D8008890AF /* Location.storyboard */,
+				5133922727FEB05D00FC9087 /* Bookmark.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				510D71B227FAE6FC00C16F3A /* LaunchScreen.storyboard in Resources */,
+				5133922827FEB05D00FC9087 /* Bookmark.storyboard in Resources */,
 				510D71AF27FAE6FC00C16F3A /* Assets.xcassets in Resources */,
 				510D71AD27FAE6FB00C16F3A /* Main.storyboard in Resources */,
 				2EF2814F27FEA7D8008890AF /* Location.storyboard in Resources */,
