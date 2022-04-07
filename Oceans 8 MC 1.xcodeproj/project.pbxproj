@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EF2814B27FDBB8F008890AF /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF2814A27FDBB8F008890AF /* LocationDetailsViewController.swift */; };
+		2EF2814F27FEA7D8008890AF /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EF2814E27FEA7D8008890AF /* Location.storyboard */; };
 		510D71A627FAE6FB00C16F3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510D71A527FAE6FB00C16F3A /* AppDelegate.swift */; };
 		510D71A827FAE6FB00C16F3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510D71A727FAE6FB00C16F3A /* SceneDelegate.swift */; };
 		510D71AA27FAE6FB00C16F3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510D71A927FAE6FB00C16F3A /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2EF2814A27FDBB8F008890AF /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
+		2EF2814E27FEA7D8008890AF /* Location.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
 		510D71A227FAE6FB00C16F3A /* Oceans 8 MC 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oceans 8 MC 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		510D71A527FAE6FB00C16F3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		510D71A727FAE6FB00C16F3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +43,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2EF2814C27FDBFE2008890AF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				510D71A927FAE6FB00C16F3A /* ViewController.swift */,
+				2EF2814A27FDBB8F008890AF /* LocationDetailsViewController.swift */,
+				5122E32327FAE9A40036E46C /* CustomTableViewCell.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2EF2814D27FEA76B008890AF /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				510D71AB27FAE6FB00C16F3A /* Main.storyboard */,
+				2EF2814E27FEA7D8008890AF /* Location.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		510D719927FAE6FB00C16F3A = {
 			isa = PBXGroup;
 			children = (
@@ -58,11 +81,10 @@
 		510D71A427FAE6FB00C16F3A /* Oceans 8 MC 1 */ = {
 			isa = PBXGroup;
 			children = (
+				2EF2814D27FEA76B008890AF /* Storyboard */,
+				2EF2814C27FDBFE2008890AF /* Controller */,
 				510D71A527FAE6FB00C16F3A /* AppDelegate.swift */,
 				510D71A727FAE6FB00C16F3A /* SceneDelegate.swift */,
-				510D71A927FAE6FB00C16F3A /* ViewController.swift */,
-				510D71AB27FAE6FB00C16F3A /* Main.storyboard */,
-				5122E32327FAE9A40036E46C /* CustomTableViewCell.swift */,
 				510D71AE27FAE6FC00C16F3A /* Assets.xcassets */,
 				510D71B027FAE6FC00C16F3A /* LaunchScreen.storyboard */,
 				510D71B327FAE6FC00C16F3A /* Info.plist */,
@@ -131,6 +153,7 @@
 				510D71B227FAE6FC00C16F3A /* LaunchScreen.storyboard in Resources */,
 				510D71AF27FAE6FC00C16F3A /* Assets.xcassets in Resources */,
 				510D71AD27FAE6FB00C16F3A /* Main.storyboard in Resources */,
+				2EF2814F27FEA7D8008890AF /* Location.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +168,7 @@
 				510D71A627FAE6FB00C16F3A /* AppDelegate.swift in Sources */,
 				5122E32427FAE9A40036E46C /* CustomTableViewCell.swift in Sources */,
 				510D71A827FAE6FB00C16F3A /* SceneDelegate.swift in Sources */,
+				2EF2814B27FDBB8F008890AF /* LocationDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
