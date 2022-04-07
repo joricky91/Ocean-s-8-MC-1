@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2EF2814B27FDBB8F008890AF /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF2814A27FDBB8F008890AF /* LocationDetailsViewController.swift */; };
 		2EF2814F27FEA7D8008890AF /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EF2814E27FEA7D8008890AF /* Location.storyboard */; };
+		4390D7CA27FF10E500E4BFB7 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4390D7C927FF10E500E4BFB7 /* SummaryViewController.swift */; };
+		4390D7CD27FF118A00E4BFB7 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4390D7CC27FF118A00E4BFB7 /* CarouselView.swift */; };
+		4390D7CF27FF11BB00E4BFB7 /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4390D7CE27FF11BB00E4BFB7 /* CarouselCell.swift */; };
 		4E16E84D27FEC7B100443918 /* MovieDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E16E84C27FEC7B100443918 /* MovieDetails.storyboard */; };
 		4E16E84F27FEC8C300443918 /* MovieDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E16E84E27FEC8C300443918 /* MovieDetailsScreen.swift */; };
 		510D71A627FAE6FB00C16F3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510D71A527FAE6FB00C16F3A /* AppDelegate.swift */; };
@@ -24,6 +27,9 @@
 /* Begin PBXFileReference section */
 		2EF2814A27FDBB8F008890AF /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 		2EF2814E27FEA7D8008890AF /* Location.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
+		4390D7C927FF10E500E4BFB7 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
+		4390D7CC27FF118A00E4BFB7 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
+		4390D7CE27FF11BB00E4BFB7 /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
 		4E16E84C27FEC7B100443918 /* MovieDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieDetails.storyboard; sourceTree = "<group>"; };
 		4E16E84E27FEC8C300443918 /* MovieDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsScreen.swift; sourceTree = "<group>"; };
 		510D71A227FAE6FB00C16F3A /* Oceans 8 MC 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oceans 8 MC 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,10 +58,12 @@
 		2EF2814C27FDBFE2008890AF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4390D7CB27FF112D00E4BFB7 /* Carousel */,
 				510D71A927FAE6FB00C16F3A /* ViewController.swift */,
 				2EF2814A27FDBB8F008890AF /* LocationDetailsViewController.swift */,
 				5122E32327FAE9A40036E46C /* CustomTableViewCell.swift */,
 				4E16E84E27FEC8C300443918 /* MovieDetailsScreen.swift */,
+				4390D7C927FF10E500E4BFB7 /* SummaryViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -69,6 +77,15 @@
 				4E16E84C27FEC7B100443918 /* MovieDetails.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		4390D7CB27FF112D00E4BFB7 /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				4390D7CC27FF118A00E4BFB7 /* CarouselView.swift */,
+				4390D7CE27FF11BB00E4BFB7 /* CarouselCell.swift */,
+			);
+			path = Carousel;
 			sourceTree = "<group>";
 		};
 		510D719927FAE6FB00C16F3A = {
@@ -178,8 +195,11 @@
 				510D71AA27FAE6FB00C16F3A /* ViewController.swift in Sources */,
 				510D71A627FAE6FB00C16F3A /* AppDelegate.swift in Sources */,
 				5122E32427FAE9A40036E46C /* CustomTableViewCell.swift in Sources */,
+				4390D7CF27FF11BB00E4BFB7 /* CarouselCell.swift in Sources */,
 				510D71A827FAE6FB00C16F3A /* SceneDelegate.swift in Sources */,
 				2EF2814B27FDBB8F008890AF /* LocationDetailsViewController.swift in Sources */,
+				4390D7CA27FF10E500E4BFB7 /* SummaryViewController.swift in Sources */,
+				4390D7CD27FF118A00E4BFB7 /* CarouselView.swift in Sources */,
 				4E16E84F27FEC8C300443918 /* MovieDetailsScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

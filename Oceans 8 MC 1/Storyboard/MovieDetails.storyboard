@@ -11,7 +11,7 @@
         <!--Movie Details-->
         <scene sceneID="d8v-ow-vab">
             <objects>
-                <viewController storyboardIdentifier="movieDetail" id="Hge-FN-fjU" customClass="MovieDetailsScreen" customModule="MoviePin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="movieDetail" id="Hge-FN-fjU" customClass="MovieDetailsScreen" customModule="Oceans_8_MC_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rGK-GZ-oUs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,7 +53,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationCell" id="wJd-GE-Nvp" customClass="LocationCell" customModule="MoviePin" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationCell" id="wJd-GE-Nvp" customClass="LocationCell" customModule="Oceans_8_MC_1" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="390" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wJd-GE-Nvp" id="P4g-i1-MBK">
