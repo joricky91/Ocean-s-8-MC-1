@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2EF2814B27FDBB8F008890AF /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF2814A27FDBB8F008890AF /* LocationDetailsViewController.swift */; };
 		2EF2814F27FEA7D8008890AF /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EF2814E27FEA7D8008890AF /* Location.storyboard */; };
+		4E16E84D27FEC7B100443918 /* MovieDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E16E84C27FEC7B100443918 /* MovieDetails.storyboard */; };
+		4E16E84F27FEC8C300443918 /* MovieDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E16E84E27FEC8C300443918 /* MovieDetailsScreen.swift */; };
 		510D71A627FAE6FB00C16F3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510D71A527FAE6FB00C16F3A /* AppDelegate.swift */; };
 		510D71A827FAE6FB00C16F3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510D71A727FAE6FB00C16F3A /* SceneDelegate.swift */; };
 		510D71AA27FAE6FB00C16F3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510D71A927FAE6FB00C16F3A /* ViewController.swift */; };
@@ -22,6 +24,8 @@
 /* Begin PBXFileReference section */
 		2EF2814A27FDBB8F008890AF /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 		2EF2814E27FEA7D8008890AF /* Location.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
+		4E16E84C27FEC7B100443918 /* MovieDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieDetails.storyboard; sourceTree = "<group>"; };
+		4E16E84E27FEC8C300443918 /* MovieDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsScreen.swift; sourceTree = "<group>"; };
 		510D71A227FAE6FB00C16F3A /* Oceans 8 MC 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oceans 8 MC 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		510D71A527FAE6FB00C16F3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		510D71A727FAE6FB00C16F3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +55,7 @@
 				510D71A927FAE6FB00C16F3A /* ViewController.swift */,
 				2EF2814A27FDBB8F008890AF /* LocationDetailsViewController.swift */,
 				5122E32327FAE9A40036E46C /* CustomTableViewCell.swift */,
+				4E16E84E27FEC8C300443918 /* MovieDetailsScreen.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -61,6 +66,7 @@
 				510D71AB27FAE6FB00C16F3A /* Main.storyboard */,
 				2EF2814E27FEA7D8008890AF /* Location.storyboard */,
 				5133922727FEB05D00FC9087 /* Bookmark.storyboard */,
+				4E16E84C27FEC7B100443918 /* MovieDetails.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -155,6 +161,7 @@
 			files = (
 				510D71B227FAE6FC00C16F3A /* LaunchScreen.storyboard in Resources */,
 				5133922827FEB05D00FC9087 /* Bookmark.storyboard in Resources */,
+				4E16E84D27FEC7B100443918 /* MovieDetails.storyboard in Resources */,
 				510D71AF27FAE6FC00C16F3A /* Assets.xcassets in Resources */,
 				510D71AD27FAE6FB00C16F3A /* Main.storyboard in Resources */,
 				2EF2814F27FEA7D8008890AF /* Location.storyboard in Resources */,
@@ -173,6 +180,7 @@
 				5122E32427FAE9A40036E46C /* CustomTableViewCell.swift in Sources */,
 				510D71A827FAE6FB00C16F3A /* SceneDelegate.swift in Sources */,
 				2EF2814B27FDBB8F008890AF /* LocationDetailsViewController.swift in Sources */,
+				4E16E84F27FEC8C300443918 /* MovieDetailsScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
