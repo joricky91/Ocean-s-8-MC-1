@@ -57,6 +57,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		4390D7C827FEA79C00E4BFB7 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				510D71AB27FAE6FB00C16F3A /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		510D719927FAE6FB00C16F3A = {
 			isa = PBXGroup;
 			children = (
@@ -76,10 +84,10 @@
 		510D71A427FAE6FB00C16F3A /* Oceans 8 MC 1 */ = {
 			isa = PBXGroup;
 			children = (
+				4390D7C827FEA79C00E4BFB7 /* Storyboard */,
 				510D71A527FAE6FB00C16F3A /* AppDelegate.swift */,
 				437E294E27FDD9920098BC2E /* Controller */,
 				510D71A727FAE6FB00C16F3A /* SceneDelegate.swift */,
-				510D71AB27FAE6FB00C16F3A /* Main.storyboard */,
 				510D71AE27FAE6FC00C16F3A /* Assets.xcassets */,
 				510D71B027FAE6FC00C16F3A /* LaunchScreen.storyboard */,
 				510D71B327FAE6FC00C16F3A /* Info.plist */,

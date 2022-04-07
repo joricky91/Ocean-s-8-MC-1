@@ -23,7 +23,7 @@ class CarouselView: UIView {
     private lazy var carouselCollectionView: UICollectionView = {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collection.showsHorizontalScrollIndicator = false
-        collection.isPagingEnabled = true
+        collection.isPagingEnabled = false
         collection.dataSource = self
         collection.delegate = self
         collection.register(CarouselCell.self, forCellWithReuseIdentifier: CarouselCell.cellId)
@@ -70,17 +70,17 @@ private extension CarouselView {
     func setupUI() {
         backgroundColor = .clear
         setupCollectionView()
-        setupPageControl()
+//        setupPageControl()
     }
     
     func setupCollectionView() {
         
-        let cellPadding = (frame.width - 300) / 2
+        let cellPadding = (frame.width - 320) / 2
         let carouselLayout = UICollectionViewFlowLayout()
         carouselLayout.scrollDirection = .horizontal
-        carouselLayout.itemSize = .init(width: 300, height: 200)
-        carouselLayout.sectionInset = .init(top: 0, left: cellPadding, bottom: 0, right: cellPadding)
-        carouselLayout.minimumLineSpacing = cellPadding
+        carouselLayout.itemSize = .init(width: 250, height: 200)
+        carouselLayout.sectionInset = .init(top: 0, left: cellPadding/2, bottom: 0, right: cellPadding/2)
+        carouselLayout.minimumLineSpacing = cellPadding/2
         carouselCollectionView.collectionViewLayout = carouselLayout
         
         addSubview(carouselCollectionView)
@@ -88,18 +88,18 @@ private extension CarouselView {
         carouselCollectionView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         carouselCollectionView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         carouselCollectionView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        carouselCollectionView.heightAnchor.constraint(equalToConstant: 500).isActive = true
+        carouselCollectionView.heightAnchor.constraint(equalToConstant: 300).isActive = true
     }
     
-    func setupPageControl() {
-        addSubview(pageControl)
-        pageControl.translatesAutoresizingMaskIntoConstraints = false
-        pageControl.topAnchor.constraint(equalTo: carouselCollectionView.bottomAnchor, constant: 16).isActive = true
-        pageControl.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        pageControl.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        pageControl.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        pageControl.numberOfPages = pages
-    }
+//    func setupPageControl() {
+//        addSubview(pageControl)
+//        pageControl.translatesAutoresizingMaskIntoConstraints = false
+//        pageControl.topAnchor.constraint(equalTo: carouselCollectionView.bottomAnchor, constant: 16).isActive = true
+//        pageControl.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+//        pageControl.widthAnchor.constraint(equalToConstant: 150).isActive = true
+//        pageControl.heightAnchor.constraint(equalToConstant: 50).isActive = true
+//        pageControl.numberOfPages = pages
+//    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -142,12 +142,12 @@ extension CarouselView: UICollectionViewDelegate {
 // MARK: - Public
 extension CarouselView {
     public func configureView(with data: [CarouselData]) {
-        let cellPadding = (frame.width - 300) / 2
+        let cellPadding = (frame.width - 320) / 2
         let carouselLayout = UICollectionViewFlowLayout()
         carouselLayout.scrollDirection = .horizontal
-        carouselLayout.itemSize = .init(width: 300, height: 200)
-        carouselLayout.sectionInset = .init(top: 0, left: cellPadding, bottom: 0, right: cellPadding)
-        carouselLayout.minimumLineSpacing = cellPadding
+        carouselLayout.itemSize = .init(width: 250, height: 200)
+        carouselLayout.sectionInset = .init(top: 0, left: cellPadding/2, bottom: 0, right: cellPadding/2)
+        carouselLayout.minimumLineSpacing = cellPadding/2
         carouselCollectionView.collectionViewLayout = carouselLayout
         
         carouselData = data
