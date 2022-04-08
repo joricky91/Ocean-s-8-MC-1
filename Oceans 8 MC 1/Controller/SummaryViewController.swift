@@ -18,6 +18,7 @@ class SummaryViewController: UIViewController, UISearchBarDelegate, UISearchResu
     let searchController = UISearchController(searchResultsController: nil)
     var scrollView: UIScrollView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchController.searchResultsUpdater = self
@@ -51,6 +52,12 @@ class SummaryViewController: UIViewController, UISearchBarDelegate, UISearchResu
         carouselData3.append(.init(image: UIImage(named: "tokyo"), title: "Japan", city: "Tokyo"))
         
         setupUI()
+        
+        carouselView1?.pageControl.addTarget(self, action: #selector(self.imageClicked(sender:)), for: .touchUpInside)
+    }
+    
+    @objc func imageClicked(sender: UIImage) {
+        performSegue(withIdentifier: "goToMovieDetail", sender: UIImage.self)
     }
     
     override func viewDidAppear(_ animated: Bool) {

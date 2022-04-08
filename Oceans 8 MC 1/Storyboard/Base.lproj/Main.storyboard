@@ -40,6 +40,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="7F1-nv-WIb" kind="relationship" relationship="viewControllers" id="f0m-VV-fo6"/>
+                        <segue destination="fiX-b6-jsb" kind="relationship" relationship="viewControllers" id="k1m-TO-Gwp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kBh-aW-16l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -53,33 +54,46 @@
                     <view key="view" contentMode="scaleToFill" id="mmr-2y-34f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcc-sD-BV0">
-                                <rect key="frame" x="277" y="707" width="88" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <segue destination="g1f-aT-q5R" kind="presentation" modalPresentationStyle="fullScreen" id="Fvm-ZY-S7Y"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="gft-dy-RUR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Summary" id="4ql-3p-yAM"/>
+                    <connections>
+                        <segue destination="g1f-aT-q5R" kind="show" identifier="goToMovieDetail" id="yGC-SJ-rUw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sCp-fX-UNz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1800.0000000000002" y="95.758928571428569"/>
         </scene>
+        <!--bookmark-->
+        <scene sceneID="hm6-nM-4rb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Bookmark" referencedIdentifier="bookmark" id="fiX-b6-jsb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="jEi-pl-lQK"/>
+                    <navigationItem key="navigationItem" id="J3c-MS-WfF"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ClQ-Ir-y7R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="496" y="489"/>
+        </scene>
         <!--movieDetail-->
         <scene sceneID="Xus-ou-ga3">
             <objects>
-                <viewControllerPlaceholder storyboardName="MovieDetails" referencedIdentifier="movieDetail" id="g1f-aT-q5R" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="MovieDetails" referencedIdentifier="movieDetail" id="g1f-aT-q5R" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="dxs-zw-xB1"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xSg-wk-9wG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1800" y="478"/>
+            <point key="canvasLocation" x="2364" y="-36"/>
+        </scene>
+        <!--locationDetail-->
+        <scene sceneID="0BB-Ad-giD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Location" referencedIdentifier="locationDetail" id="ldv-iL-6w4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y8d-y8-gqK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2398" y="260"/>
         </scene>
     </scenes>
     <resources>

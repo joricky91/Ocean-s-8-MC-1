@@ -51,8 +51,8 @@
                                                         <constraint firstAttribute="width" constant="130" id="OAa-rr-3BA"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7S2-Bd-XzL">
-                                                    <rect key="frame" x="183" y="35" width="139" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7S2-Bd-XzL">
+                                                    <rect key="frame" x="161" y="35" width="51.5" height="24"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -66,8 +66,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="chevron.forward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="i6h-56-A0b">
-                                                    <rect key="frame" x="361.5" y="42" width="12.5" height="16.5"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.forward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="i6h-56-A0b">
+                                                    <rect key="frame" x="333" y="42" width="41" height="16.5"/>
                                                     <color key="tintColor" systemColor="systemGray2Color"/>
                                                 </imageView>
                                             </subviews>
@@ -75,7 +75,7 @@
                                                 <constraint firstItem="7S2-Bd-XzL" firstAttribute="top" secondItem="5eA-5I-s3s" secondAttribute="top" constant="35" id="EFx-ke-cO3"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="i6h-56-A0b" secondAttribute="trailing" constant="20" id="Ob9-Zd-XNO"/>
                                                 <constraint firstItem="7S2-Bd-XzL" firstAttribute="leading" secondItem="QXD-tt-hoQ" secondAttribute="trailing" constant="13" id="RHf-l6-AEN"/>
-                                                <constraint firstItem="i6h-56-A0b" firstAttribute="leading" secondItem="7S2-Bd-XzL" secondAttribute="trailing" constant="40" id="SUA-rI-OBl"/>
+                                                <constraint firstItem="i6h-56-A0b" firstAttribute="leading" secondItem="QXD-tt-hoQ" secondAttribute="centerX" constant="250" id="SUA-rI-OBl"/>
                                                 <constraint firstItem="c7b-cR-dwL" firstAttribute="leading" secondItem="QXD-tt-hoQ" secondAttribute="trailing" constant="13" id="VIU-Si-xiZ"/>
                                                 <constraint firstItem="c7b-cR-dwL" firstAttribute="top" secondItem="7S2-Bd-XzL" secondAttribute="bottom" id="Zc1-fo-1Qo"/>
                                                 <constraint firstItem="QXD-tt-hoQ" firstAttribute="centerY" secondItem="5eA-5I-s3s" secondAttribute="centerY" id="l5H-GT-sF9"/>
@@ -93,6 +93,15 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="p9U-UU-rJw">
+                                <rect key="frame" x="0.0" y="426" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <segue destination="ydv-nR-aRi" kind="presentation" modalPresentationStyle="fullScreen" id="D5c-6v-TYo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SF9-1Z-BFZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -112,10 +121,18 @@
             </objects>
             <point key="canvasLocation" x="1618.840579710145" y="67.633928571428569"/>
         </scene>
+        <!--locationDetail-->
+        <scene sceneID="dpu-bQ-Xxm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Location" referencedIdentifier="locationDetail" id="ydv-nR-aRi" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WB5-wx-Qax" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2276" y="43"/>
+        </scene>
         <!--Bookmark-->
         <scene sceneID="XFA-ch-C1y">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ocA-gC-co5" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="bookmark" automaticallyAdjustsScrollViewInsets="NO" id="ocA-gC-co5" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Bookmark" image="bookmark.fill" catalog="system" id="uBs-rP-aOH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Uu8-DG-g8a">

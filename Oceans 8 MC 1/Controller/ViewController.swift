@@ -18,13 +18,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let movie: String
     }
     
-    let data: [Bookmark] = [
-        Bookmark(imageName: "tokyo", location: "Tokyo", movie: "Kimi no na Wa"),
-        Bookmark(imageName: "indonesia", location: "Indonesia", movie: "Laskar Pelangi"),
-        Bookmark(imageName: "korea", location: "Korea", movie: "Drakor")
+    let movieArray: [Movie] = [
+        Movie(title: "Spiderman No Way Home", releaseDate: "2021", genre: "Action", synopsis: "With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man.", location: [])
     ]
     
-    var filteredData: [Bookmark]!
+    let locationArray: [LocationModel] = [
+        LocationModel(locationName: "Tokyo", street: "Shibuya No. 17", hours: "-", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras bibendum mi vitae metus pulvinar ullamcorper. Maecenas dapibus tristique rutrum. Donec auctor, nisi sed condimentum rutrum, augue elit convallis eros, sed faucibus est odio sit amet tortor.", image: "tokyo", imageCollection: ["indonesia", "korea"], restriction: "No restriction, but be careful if you visit this place on night", access: "Anyone could access this place, because this place is a public facility", price: "Free", movie: "Spiderman No Way Home", bookmark: true)
+    ]
+    
+//    let data: [Bookmark] = [
+//        Bookmark(imageName: "tokyo", location: "Tokyo", movie: "Kimi no na Wa"),
+//        Bookmark(imageName: "indonesia", location: "Indonesia", movie: "Laskar Pelangi"),
+//        Bookmark(imageName: "korea", location: "Korea", movie: "Drakor")
+//    ]
+    
+    var filteredData: [LocationModel]!
     
     let searchController = UISearchController(searchResultsController: nil)
 
@@ -37,7 +45,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         navigationItem.searchController = searchController
         definesPresentationContext = true
     
-        filteredData = data
+        filteredData = locationArray
         table.dataSource = self
         table.delegate = self
     }
@@ -49,8 +57,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let bookmark = filteredData[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
-        cell.tableImage.image = UIImage(named: bookmark.imageName)
-        cell.locationLabel.text = bookmark.location
+        cell.tableImage.image = UIImage(named: bookmark.image)
+        cell.locationLabel.text = bookmark.locationName
         cell.movieLabel.text = bookmark.movie
         
         return cell
@@ -66,11 +74,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         filteredData = []
         
         if searchText == "" {
-            filteredData = data
+            filteredData = locationArray
         }
         
-        for locationName in data {
-            if locationName.location.lowercased().contains(searchText.lowercased()) {
+        for locationName in locationArray {
+            if locationName.locationName.lowercased().contains(searchText.lowercased()) {
                 filteredData.append(locationName)
             }
         }

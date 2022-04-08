@@ -22,6 +22,8 @@
 		510D71B227FAE6FC00C16F3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 510D71B027FAE6FC00C16F3A /* LaunchScreen.storyboard */; };
 		5122E32427FAE9A40036E46C /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E32327FAE9A40036E46C /* CustomTableViewCell.swift */; };
 		5133922827FEB05D00FC9087 /* Bookmark.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5133922727FEB05D00FC9087 /* Bookmark.storyboard */; };
+		5133922D2800184400FC9087 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133922C2800184400FC9087 /* Movie.swift */; };
+		5133922F280018BA00FC9087 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133922E280018BA00FC9087 /* LocationModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		510D71B327FAE6FC00C16F3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5122E32327FAE9A40036E46C /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		5133922727FEB05D00FC9087 /* Bookmark.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Bookmark.storyboard; sourceTree = "<group>"; };
+		5133922C2800184400FC9087 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		5133922E280018BA00FC9087 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 		510D71A427FAE6FB00C16F3A /* Oceans 8 MC 1 */ = {
 			isa = PBXGroup;
 			children = (
+				5133922B280017D700FC9087 /* Model */,
 				2EF2814D27FEA76B008890AF /* Storyboard */,
 				2EF2814C27FDBFE2008890AF /* Controller */,
 				510D71A527FAE6FB00C16F3A /* AppDelegate.swift */,
@@ -116,6 +121,15 @@
 				510D71B327FAE6FC00C16F3A /* Info.plist */,
 			);
 			path = "Oceans 8 MC 1";
+			sourceTree = "<group>";
+		};
+		5133922B280017D700FC9087 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5133922C2800184400FC9087 /* Movie.swift */,
+				5133922E280018BA00FC9087 /* LocationModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,9 +207,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				510D71AA27FAE6FB00C16F3A /* ViewController.swift in Sources */,
+				5133922F280018BA00FC9087 /* LocationModel.swift in Sources */,
 				510D71A627FAE6FB00C16F3A /* AppDelegate.swift in Sources */,
 				5122E32427FAE9A40036E46C /* CustomTableViewCell.swift in Sources */,
 				4390D7CF27FF11BB00E4BFB7 /* CarouselCell.swift in Sources */,
+				5133922D2800184400FC9087 /* Movie.swift in Sources */,
 				510D71A827FAE6FB00C16F3A /* SceneDelegate.swift in Sources */,
 				2EF2814B27FDBB8F008890AF /* LocationDetailsViewController.swift in Sources */,
 				4390D7CA27FF10E500E4BFB7 /* SummaryViewController.swift in Sources */,

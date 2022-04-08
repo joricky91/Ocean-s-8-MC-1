@@ -96,6 +96,15 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0d-a8-aWx">
+                                <rect key="frame" x="162" y="779" width="67" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <segue destination="QI5-aT-RPw" kind="presentation" modalPresentationStyle="fullScreen" id="XQt-HD-Dwd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="D5z-LV-QKo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -110,6 +119,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkE-mT-LfS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1315.3846153846152" y="1918.7203791469194"/>
+        </scene>
+        <!--locationDetail-->
+        <scene sceneID="KC0-Ke-e9X">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Location" referencedIdentifier="locationDetail" id="QI5-aT-RPw" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ax0-4q-gBC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-767" y="1997"/>
         </scene>
     </scenes>
     <resources>
