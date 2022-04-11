@@ -104,14 +104,20 @@ extension UITableView {
         let emptyView = UIView(frame: CGRect(x: self.center.x, y: self.center.y, width: self.bounds.size.width, height: self.bounds.size.height))
         
         let titleLabel = UILabel()
-        titleLabel.frame = CGRect(x: 0, y: 0, width: 200, height: 150)
+        let imageEmpty = UIImage(named: "film_rolls")
+        let noDataImage = UIImageView(image: imageEmpty)
+        
+        titleLabel.frame = CGRect(x: 100, y: 305, width: 200, height: 150)
 //        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.center = CGPoint(x: 200, y: 265)
+//        titleLabel.center = CGPoint(x: 200, y: 290)
         titleLabel.textAlignment = .center
         titleLabel.numberOfLines = 3
         titleLabel.textColor = UIColor.black
         titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         
+        noDataImage.frame = CGRect(x: 25, y: 0, width: 350, height: 350)
+        
+        emptyView.addSubview(noDataImage)
         emptyView.addSubview(titleLabel)
         
         titleLabel.centerXAnchor.constraint(equalTo: emptyView.centerXAnchor).isActive = true
