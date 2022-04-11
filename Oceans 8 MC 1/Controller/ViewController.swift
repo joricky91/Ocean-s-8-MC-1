@@ -23,7 +23,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     ]
     
     let locationArray: [LocationModel] = [
-        LocationModel(locationName: "Tokyo", street: "Shibuya No. 17", hours: "-", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras bibendum mi vitae metus pulvinar ullamcorper. Maecenas dapibus tristique rutrum. Donec auctor, nisi sed condimentum rutrum, augue elit convallis eros, sed faucibus est odio sit amet tortor.", image: "tokyo", imageCollection: ["indonesia", "korea"], restriction: "No restriction, but be careful if you visit this place on night", access: "Anyone could access this place, because this place is a public facility", price: "Free", movie: "Spiderman No Way Home", bookmark: true)
+        LocationModel(locationName: "Tokyo", street: "Shibuya No. 17", hours: "-", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras bibendum mi vitae metus pulvinar ullamcorper. Maecenas dapibus tristique rutrum. Donec auctor, nisi sed condimentum rutrum, augue elit convallis eros, sed faucibus est odio sit amet tortor.", image: "tokyo", imageCollection: ["indonesia", "korea"], restriction: "No restriction, but be careful if you visit this place on night", access: "Anyone could access this place, because this place is a public facility", price: "Free", movie: "Spiderman No Way Home", bookmark: false),
+        LocationModel(locationName: "Korea", street: "Shibuya No. 17", hours: "-", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras bibendum mi vitae metus pulvinar ullamcorper. Maecenas dapibus tristique rutrum. Donec auctor, nisi sed condimentum rutrum, augue elit convallis eros, sed faucibus est odio sit amet tortor.", image: "korea", imageCollection: ["indonesia", "korea"], restriction: "No restriction, but be careful if you visit this place on night", access: "Anyone could access this place, because this place is a public facility", price: "Free", movie: "Spiderman No Way Home", bookmark: false)
     ]
     
 //    let data: [Bookmark] = [
@@ -45,12 +46,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         navigationItem.searchController = searchController
         definesPresentationContext = true
     
-        filteredData = locationArray
+        //filter array masih salah
+        filteredData = locationArray.filter {
+            $0.bookmark == true
+        }
         table.dataSource = self
         table.delegate = self
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if filteredData.count == 0 {
+            tableView.setEmptyView(title: "Oops.. You haven't added any Bookmarks yet :(")
+        } else {
+            tableView.restore()
+        }
         return filteredData.count
     }
     
@@ -90,4 +99,33 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
 }
 
+extension UITableView {
+    func setEmptyView(title: String) {
+        let emptyView = UIView(frame: CGRect(x: self.center.x, y: self.center.y, width: self.bounds.size.width, height: self.bounds.size.height))
+        
+        let titleLabel = UILabel()
+        titleLabel.frame = CGRect(x: 0, y: 0, width: 200, height: 150)
+//        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.center = CGPoint(x: 200, y: 265)
+        titleLabel.textAlignment = .center
+        titleLabel.numberOfLines = 3
+        titleLabel.textColor = UIColor.black
+        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        
+        emptyView.addSubview(titleLabel)
+        
+        titleLabel.centerXAnchor.constraint(equalTo: emptyView.centerXAnchor).isActive = true
+        titleLabel.centerYAnchor.constraint(equalTo: emptyView.centerYAnchor).isActive = true
+        
+        titleLabel.text = title
+        
+        self.backgroundView = emptyView
+        self.separatorStyle = .none
+    }
+    
+    func restore() {
+        self.backgroundView = nil
+        self.separatorStyle = .singleLine
+    }
+}
 

@@ -12,7 +12,7 @@
         <!--Location Details-->
         <scene sceneID="RQx-1H-hPH">
             <objects>
-                <viewController id="Rot-Ws-3c3" customClass="LocationDetailsViewController" customModule="Oceans_8_MC_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Rot-Ws-3c3" customClass="LocationDetailsViewController" customModule="Oceans_8_MC_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xY8-ao-CZV" customClass="location">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

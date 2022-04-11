@@ -99,7 +99,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
-                                    <segue destination="ydv-nR-aRi" kind="presentation" modalPresentationStyle="fullScreen" id="D5c-6v-TYo"/>
+                                    <segue destination="ydv-nR-aRi" kind="show" id="D5c-6v-TYo"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -124,7 +124,9 @@
         <!--locationDetail-->
         <scene sceneID="dpu-bQ-Xxm">
             <objects>
-                <viewControllerPlaceholder storyboardName="Location" referencedIdentifier="locationDetail" id="ydv-nR-aRi" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Location" referencedIdentifier="locationDetail" id="ydv-nR-aRi" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="vFw-x7-N9k"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WB5-wx-Qax" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2276" y="43"/>
@@ -132,7 +134,7 @@
         <!--Bookmark-->
         <scene sceneID="XFA-ch-C1y">
             <objects>
-                <navigationController storyboardIdentifier="bookmark" automaticallyAdjustsScrollViewInsets="NO" id="ocA-gC-co5" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="bookmark" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="ocA-gC-co5" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Bookmark" image="bookmark.fill" catalog="system" id="uBs-rP-aOH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Uu8-DG-g8a">
