@@ -6,19 +6,25 @@
 //
 import UIKit
 
+struct CarouselData {
+    let image: UIImage?
+    let title: String?
+    let city: String?
+}
+
 protocol CarouselViewDelegate: AnyObject {
     func currentPageDidChange(to page: Int)
 }
 
+protocol CollectionViewCellDelegate: AnyObject {
+    func collectionViewCellDidTapItem(with viewModel: CarouselData)
+}
+
 class CarouselView: UIView {
     
-    struct CarouselData {
-        let image: UIImage?
-        let title: String?
-        let city: String?
-    }
-    
     // MARK: - Subviews
+    
+    weak var delegateCell: (CollectionViewCellDelegate)?
     
     private lazy var carouselCollectionView: UICollectionView = {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
@@ -90,18 +96,6 @@ private extension CarouselView {
         carouselLayout.minimumLineSpacing = cellPadding/2
         carouselCollectionView.collectionViewLayout = carouselLayout
         
-//        addSubview(titleLabel)
-//        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-//        titleLabel.topAnchor.constraint(equalTo: bottomAnchor).isActive = true
-//        titleLabel.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-//        titleLabel.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-//        titleLabel.heightAnchor.constraint(equalToConstant: 500).isActive = true
-//        titleLabel.numberOfLines = 0
-//        titleLabel.textAlignment = .left
-//        titleLabel.font = .boldSystemFont(ofSize: 18)
-//        titleLabel.textColor = .black
-//        titleLabel.text = "ANIME"
-        
         addSubview(carouselCollectionView)
         carouselCollectionView.translatesAutoresizingMaskIntoConstraints = false
         carouselCollectionView.topAnchor.constraint(equalTo: topAnchor).isActive = true
@@ -141,6 +135,13 @@ extension CarouselView: UICollectionViewDataSource {
         cell.configure(image: image, title: title, city: city)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        let carouselData = carouselData[indexPath.row]
+        
+        delegateCell?.collectionViewCellDidTapItem(with: carouselData)
     }
 }
 
