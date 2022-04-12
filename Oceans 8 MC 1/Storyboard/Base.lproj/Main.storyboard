@@ -58,9 +58,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Summary" id="4ql-3p-yAM"/>
-                    <connections>
-                        <segue destination="g1f-aT-q5R" kind="show" identifier="goToMovieDetail" id="yGC-SJ-rUw"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sCp-fX-UNz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -23,9 +23,11 @@ class LocationDetailsViewController: UIViewController {
     @IBOutlet weak var estimatedPriceText: UILabel!
     
     
-    let locationArray: [LocationModel] = [
-        LocationModel(locationName: "Tokyo", street: "Shibuya No. 17", hours: "-", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras bibendum mi vitae metus pulvinar ullamcorper. Maecenas dapibus tristique rutrum. Donec auctor, nisi sed condimentum rutrum, augue elit convallis eros, sed faucibus est odio sit amet tortor.", image: "tokyo", imageCollection: ["indonesia", "korea"], restriction: "No restriction, but be careful if you visit this place on night", access: "Anyone could access this place, because this place is a public facility", price: "Free", movie: "Spiderman No Way Home", bookmark: true)
-    ]
+//    let locationArray: [LocationModel] = [
+//        LocationModel(locationName: "Tokyo", street: "Shibuya No. 17", hours: "-", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras bibendum mi vitae metus pulvinar ullamcorper. Maecenas dapibus tristique rutrum. Donec auctor, nisi sed condimentum rutrum, augue elit convallis eros, sed faucibus est odio sit amet tortor.", image: "tokyo", imageCollection: ["indonesia", "korea"], restriction: "No restriction, but be careful if you visit this place on night", access: "Anyone could access this place, because this place is a public facility", price: "Free", movie: "Spiderman No Way Home", bookmark: true)
+//    ]
+    
+    @IBOutlet weak var bookmarkButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +54,13 @@ class LocationDetailsViewController: UIViewController {
         
     }
     
-
+    @IBAction func bookmarkTapped(_ sender: Any) {
+        DispatchQueue.main.async {
+            self.bookmarkButton.image = UIImage(systemName: "bookmark.fill")
+            locationArray[0].bookmark = true
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

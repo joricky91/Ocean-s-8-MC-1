@@ -12,7 +12,7 @@
         <!--Location Details-->
         <scene sceneID="RQx-1H-hPH">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="Rot-Ws-3c3" customClass="LocationDetailsViewController" customModule="Oceans_8_MC_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Rot-Ws-3c3" customClass="LocationDetailsViewController" customModule="Oceans_8_MC_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xY8-ao-CZV" customClass="location">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -173,12 +173,20 @@
                     <navigationItem key="navigationItem" title="Location Details" id="GN6-dh-GeX">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="HgJ-eL-HuL">
                             <imageReference key="image" image="chevron.backward" catalog="system" symbolScale="default"/>
+                            <connections>
+                                <segue destination="Gix-wl-8sR" kind="presentation" modalPresentationStyle="fullScreen" id="CPG-6S-N8U"/>
+                            </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="bookmark" catalog="system" id="oV7-XN-gM1"/>
+                        <barButtonItem key="rightBarButtonItem" image="bookmark" catalog="system" id="oV7-XN-gM1">
+                            <connections>
+                                <action selector="bookmarkTapped:" destination="Rot-Ws-3c3" id="dUx-td-mRJ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="390" height="1000"/>
                     <connections>
-                        <outlet property="accessText" destination="q0y-wI-E4T" id="dLm-7E-eMd"/>
+                        <outlet property="accessLocation" destination="wC8-90-Klf" id="zgI-VD-DRj"/>
+                        <outlet property="bookmarkButton" destination="oV7-XN-gM1" id="hrs-Ni-CBc"/>
                         <outlet property="descLocation" destination="jVT-g6-nV7" id="gQo-pb-XXv"/>
                         <outlet property="estimatedPriceText" destination="zKG-Wn-LzF" id="dGb-6M-ntr"/>
                         <outlet property="hourLocation" destination="W3R-Rj-XDV" id="SV7-pg-rty"/>
@@ -212,6 +220,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D12-PI-r7w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="418.84057971014494" y="819.64285714285711"/>
+        </scene>
+        <!--bookmark-->
+        <scene sceneID="l2h-gW-aXk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Bookmark" referencedIdentifier="bookmark" id="Gix-wl-8sR" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XTb-s7-erZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="867" y="596"/>
         </scene>
     </scenes>
     <resources>
