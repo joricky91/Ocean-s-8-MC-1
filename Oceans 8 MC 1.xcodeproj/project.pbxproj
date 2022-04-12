@@ -12,6 +12,8 @@
 		4390D7CA27FF10E500E4BFB7 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4390D7C927FF10E500E4BFB7 /* SummaryViewController.swift */; };
 		4390D7CD27FF118A00E4BFB7 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4390D7CC27FF118A00E4BFB7 /* CarouselView.swift */; };
 		4390D7CF27FF11BB00E4BFB7 /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4390D7CE27FF11BB00E4BFB7 /* CarouselCell.swift */; };
+		439288C8280393690006BE4B /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439288C7280393690006BE4B /* CollectionTableViewCell.swift */; };
+		439288CA280397CE0006BE4B /* TileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439288C9280397CE0006BE4B /* TileCollectionViewCell.swift */; };
 		4E16E84D27FEC7B100443918 /* MovieDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E16E84C27FEC7B100443918 /* MovieDetails.storyboard */; };
 		4E16E84F27FEC8C300443918 /* MovieDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E16E84E27FEC8C300443918 /* MovieDetailsScreen.swift */; };
 		510D71A627FAE6FB00C16F3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510D71A527FAE6FB00C16F3A /* AppDelegate.swift */; };
@@ -32,6 +34,8 @@
 		4390D7C927FF10E500E4BFB7 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		4390D7CC27FF118A00E4BFB7 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 		4390D7CE27FF11BB00E4BFB7 /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
+		439288C7280393690006BE4B /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		439288C9280397CE0006BE4B /* TileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileCollectionViewCell.swift; sourceTree = "<group>"; };
 		4E16E84C27FEC7B100443918 /* MovieDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieDetails.storyboard; sourceTree = "<group>"; };
 		4E16E84E27FEC8C300443918 /* MovieDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsScreen.swift; sourceTree = "<group>"; };
 		510D71A227FAE6FB00C16F3A /* Oceans 8 MC 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oceans 8 MC 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +90,8 @@
 		4390D7CB27FF112D00E4BFB7 /* Carousel */ = {
 			isa = PBXGroup;
 			children = (
+				439288C7280393690006BE4B /* CollectionTableViewCell.swift */,
+				439288C9280397CE0006BE4B /* TileCollectionViewCell.swift */,
 				4390D7CC27FF118A00E4BFB7 /* CarouselView.swift */,
 				4390D7CE27FF11BB00E4BFB7 /* CarouselCell.swift */,
 			);
@@ -207,12 +213,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				510D71AA27FAE6FB00C16F3A /* ViewController.swift in Sources */,
+				439288CA280397CE0006BE4B /* TileCollectionViewCell.swift in Sources */,
 				5133922F280018BA00FC9087 /* LocationModel.swift in Sources */,
 				510D71A627FAE6FB00C16F3A /* AppDelegate.swift in Sources */,
 				5122E32427FAE9A40036E46C /* CustomTableViewCell.swift in Sources */,
 				4390D7CF27FF11BB00E4BFB7 /* CarouselCell.swift in Sources */,
 				5133922D2800184400FC9087 /* Movie.swift in Sources */,
 				510D71A827FAE6FB00C16F3A /* SceneDelegate.swift in Sources */,
+				439288C8280393690006BE4B /* CollectionTableViewCell.swift in Sources */,
 				2EF2814B27FDBB8F008890AF /* LocationDetailsViewController.swift in Sources */,
 				4390D7CA27FF10E500E4BFB7 /* SummaryViewController.swift in Sources */,
 				4390D7CD27FF118A00E4BFB7 /* CarouselView.swift in Sources */,
@@ -361,9 +369,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SHR59DG262;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Oceans 8 MC 1/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -378,6 +386,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jonathanRicky.Oceans-8-MC-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -389,9 +398,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SHR59DG262;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Oceans 8 MC 1/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -406,6 +415,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jonathanRicky.Oceans-8-MC-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
