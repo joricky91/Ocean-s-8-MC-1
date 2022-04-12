@@ -18,15 +18,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let movie: String
     }
     
-    let movieArray: [Movie] = [
-        Movie(title: "Spiderman No Way Home", releaseDate: "2021", genre: "Action", synopsis: "With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man.", location: [])
-    ]
-    
-    let locationArray: [LocationModel] = [
-        LocationModel(locationName: "Tokyo", street: "Shibuya No. 17", hours: "-", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras bibendum mi vitae metus pulvinar ullamcorper. Maecenas dapibus tristique rutrum. Donec auctor, nisi sed condimentum rutrum, augue elit convallis eros, sed faucibus est odio sit amet tortor.", image: "tokyo", imageCollection: ["indonesia", "korea"], restriction: "No restriction, but be careful if you visit this place on night", access: "Anyone could access this place, because this place is a public facility", price: "Free", movie: "Spiderman No Way Home", bookmark: false),
-        LocationModel(locationName: "Korea", street: "Shibuya No. 17", hours: "-", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras bibendum mi vitae metus pulvinar ullamcorper. Maecenas dapibus tristique rutrum. Donec auctor, nisi sed condimentum rutrum, augue elit convallis eros, sed faucibus est odio sit amet tortor.", image: "korea", imageCollection: ["indonesia", "korea"], restriction: "No restriction, but be careful if you visit this place on night", access: "Anyone could access this place, because this place is a public facility", price: "Free", movie: "Spiderman No Way Home", bookmark: false)
-    ]
-    
 //    let data: [Bookmark] = [
 //        Bookmark(imageName: "tokyo", location: "Tokyo", movie: "Kimi no na Wa"),
 //        Bookmark(imageName: "indonesia", location: "Indonesia", movie: "Laskar Pelangi"),
