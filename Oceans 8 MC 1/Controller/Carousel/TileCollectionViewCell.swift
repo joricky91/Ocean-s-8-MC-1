@@ -8,9 +8,9 @@
 import UIKit
 
 struct TileCollectionViewCellViewModel {
-    let title: String?
+    var title: String?
     let image: UIImage?
-    let city: String?
+    var city: String?
 }
 
 class TileCollectionViewCell: UICollectionViewCell {
