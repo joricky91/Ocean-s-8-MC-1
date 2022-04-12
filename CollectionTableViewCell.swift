@@ -8,7 +8,7 @@
 import UIKit
 
 struct CollectionTableViewCellViewModel {
-    let viewModels: [TileCollectionViewCellViewModel]
+    var viewModels: [TileCollectionViewCellViewModel]
     let category: String
 }
 
