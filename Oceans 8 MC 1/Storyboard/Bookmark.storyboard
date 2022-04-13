@@ -76,7 +76,6 @@
                                             <outlet property="locationLabel" destination="7S2-Bd-XzL" id="5Nq-Sl-v2Q"/>
                                             <outlet property="movieLabel" destination="c7b-cR-dwL" id="LBe-9B-4PL"/>
                                             <outlet property="tableImage" destination="QXD-tt-hoQ" id="rZR-4T-bjh"/>
-                                            <segue destination="VS5-QP-1WG" kind="show" identifier="showLocDetail" id="GLj-OG-i2K"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -94,6 +93,7 @@
                     <navigationItem key="navigationItem" title="Bookmark" id="euH-gK-lvf"/>
                     <connections>
                         <outlet property="table" destination="ajF-c5-p3M" id="Am4-mO-rdg"/>
+                        <segue destination="VS5-QP-1WG" kind="show" identifier="showLocDetail" id="wfg-9l-qm1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ESk-AP-h8T" sceneMemberID="firstResponder"/>

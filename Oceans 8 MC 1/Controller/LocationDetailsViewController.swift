@@ -51,11 +51,25 @@ class LocationDetailsViewController: UIViewController {
         estimatedPriceText.text = location.price
         accessText.text = location.access
         
+        if location.bookmark{
+            bookmarkButton.image = UIImage(systemName: "bookmark.fill")
+        } else {
+            bookmarkButton.image = UIImage(systemName: "bookmark")
+        }
+        
     }
     
     @IBAction func bookmarkTapped(_ sender: Any) {
-        DispatchQueue.main.async {
-            self.bookmarkButton.image = UIImage(systemName: "bookmark.fill")
+       
+        if location.bookmark {
+            DispatchQueue.main.async {
+                self.bookmarkButton.image = UIImage(systemName: "bookmark")
+            }
+            locationArray[selectedIndex].bookmark = false
+        } else {
+            DispatchQueue.main.async {
+                self.bookmarkButton.image = UIImage(systemName: "bookmark.fill")
+            }
             locationArray[selectedIndex].bookmark = true
         }
     }

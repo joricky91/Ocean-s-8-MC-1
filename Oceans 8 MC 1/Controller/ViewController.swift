@@ -23,18 +23,34 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Do any additional setup after loading the view.
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search"
+//        searchController.searchBar.placeholder = "Search"
+//        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        
+        
+        table.dataSource = self
+        table.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print(#function)
         navigationItem.searchController = searchController
         definesPresentationContext = true
-        //filter array masih salah
+        
         filteredData = locationArray.filter {
             $0.bookmark == true
         }
         
         temp = filteredData
-        
-        table.dataSource = self
-        table.delegate = self
+        table.reloadData()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        print(#function)
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
 
 
@@ -47,12 +63,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return filteredData.count
     }
     
+    
+    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+////        let bookmark = filteredData[indexPath.row]
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
+//        cell.tableImage.image = UIImage(named: filteredData[indexPath.row].image)
+//        cell.locationLabel.text = filteredData[indexPath.row].locationName
+//        cell.movieLabel.text = filteredData[indexPath.row].movie
+//
+//        return cell
+//    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let bookmark = filteredData[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
-        cell.tableImage.image = UIImage(named: bookmark.image)
-        cell.locationLabel.text = bookmark.locationName
-        cell.movieLabel.text = bookmark.movie
+        cell.tableImage.image = UIImage(named: filteredData[indexPath.row].image)
+        cell.locationLabel.text = filteredData[indexPath.row].locationName
+        cell.movieLabel.text = filteredData[indexPath.row].movie
         
         return cell
     }
@@ -87,7 +114,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? LocationDetailsViewController {
-            destination.location = locationArray[selectedIndex]
+            destination.location = filteredData[selectedIndex]
             print(selectedIndex)
         }
     }
