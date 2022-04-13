@@ -80,6 +80,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
         selectedIndex = indexPath.row
         performSegue(withIdentifier: "showLocDetail", sender: self)
     }

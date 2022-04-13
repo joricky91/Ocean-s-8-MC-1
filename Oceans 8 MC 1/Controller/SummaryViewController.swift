@@ -35,10 +35,6 @@ class SummaryViewController: UIViewController, UISearchBarDelegate, UISearchResu
         tableView.separatorColor = UIColor.clear
     }
     
-    @objc func imageClicked(sender: UIImage) {
-        performSegue(withIdentifier: "goToMovieDetail", sender: UIImage.self)
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
