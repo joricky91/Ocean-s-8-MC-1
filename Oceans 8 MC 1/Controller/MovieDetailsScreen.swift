@@ -8,68 +8,54 @@
 import Foundation
 import UIKit
 
-class Location {
-    
-    var image: UIImage
-    var locationname: String
-    var streetname: String
-    
-    init(image: UIImage, locationname: String, streetname: String){
-        self.image = image
-        self.locationname = locationname
-        self.streetname = streetname
-        
-    }
-}
+var selectedIndex = 0
 
 class LocationCell: UITableViewCell {
 
     @IBOutlet weak var LocationImageView: UIImageView!
     @IBOutlet weak var LocationNameTxt: UILabel!
     @IBOutlet weak var StreetNameTxt: UILabel!
-    
-    func setLocation(location: Location) {
-        LocationImageView.image = location.image
-        LocationNameTxt.text = location.locationname
-        StreetNameTxt.text = location.streetname
-    }
-    
 
 }
 
 class MovieDetailsScreen: UIViewController {
     
-    var locations: [Location] = []
+    @IBOutlet weak var moviePoster: UIImageView!
+    @IBOutlet weak var movieSynopsis: UILabel!
+    @IBOutlet weak var genre: UILabel!
+    @IBOutlet weak var releaseDate: UILabel!
+    @IBOutlet weak var movieTitle: UILabel!
+    
+    
+    var locations: [LocationModel] = []
 
     @IBOutlet weak var TableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         locations = createArray()
         
         TableView.delegate = self
         TableView.dataSource = self
-
+        
+        moviePoster.image = UIImage(named: movieArray[0].moviePoster)
+        movieSynopsis.text = movieArray[0].synopsis
+        movieTitle.text = movieArray[0].title
+        genre.text = movieArray[0].genre
+        releaseDate.text = movieArray[0].releaseDate
         
     }
     
-    func createArray() -> [Location] {
+    func createArray() -> [LocationModel] {
         
-        var tempLocations: [Location] = []
+        var tempLocations: [LocationModel] = []
         
-        let location1 = Location(image: UIImage(named: "sofitelshanghai.jpeg")! , locationname: "Sofitel Shanghai", streetname: "Blabla")
-        let location2 = Location(image: UIImage(named: "cafekacao.jpeg")! , locationname: "Cafe Kacao", streetname: "Blabla")
-        let location3 = Location(image: UIImage(named: "xujiahuipark.jpeg")! , locationname: "XuJiaHui Park", streetname: "Blabla")
-        let location4 = Location(image: UIImage(named: "nanpubridgexujiahuipark.jpeg")! , locationname: "Nanpu Bridge", streetname: "Blabla")
-        let location5 = Location(image: UIImage(named: "waibaidubridge.jpeg")! , locationname: "Waibaidu Bridge", streetname: "Blabla")
-        
+        let location1 = locationArray[0]
+        let location2 = locationArray[1]
+       
         tempLocations.append(location1)
         tempLocations.append(location2)
-        tempLocations.append(location3)
-        tempLocations.append(location4)
-        tempLocations.append(location5)
         
         return tempLocations
     }
@@ -87,10 +73,22 @@ extension MovieDetailsScreen: UITableViewDataSource, UITableViewDelegate {
         let location = locations[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell") as! LocationCell
-        
-        cell.setLocation(location: location)
+        cell.LocationImageView.image = UIImage(named: location.image)
+        cell.LocationNameTxt.text = location.locationName
+        cell.StreetNameTxt.text = location.street
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndex = indexPath.row
+        performSegue(withIdentifier: "showDetails", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? LocationDetailsViewController {
+            destination.location = locationArray[selectedIndex]
+        }
     }
 }
 

@@ -19,20 +19,16 @@ class LocationDetailsViewController: UIViewController {
     @IBOutlet weak var subImageLocation2: UIImageView!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var restrictionText: UITextView!
-    @IBOutlet weak var accessText: UITextView!
     @IBOutlet weak var estimatedPriceText: UILabel!
-    
-    
-//    let locationArray: [LocationModel] = [
-//        LocationModel(locationName: "Tokyo", street: "Shibuya No. 17", hours: "-", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras bibendum mi vitae metus pulvinar ullamcorper. Maecenas dapibus tristique rutrum. Donec auctor, nisi sed condimentum rutrum, augue elit convallis eros, sed faucibus est odio sit amet tortor.", image: "tokyo", imageCollection: ["indonesia", "korea"], restriction: "No restriction, but be careful if you visit this place on night", access: "Anyone could access this place, because this place is a public facility", price: "Free", movie: "Spiderman No Way Home", bookmark: true)
-//    ]
-    
+    @IBOutlet weak var accessText: UITextView!
     @IBOutlet weak var bookmarkButton: UIBarButtonItem!
+    
+    var location = LocationModel(locationName: "", street: "", hours: "", description: "", image: "", imageCollection: [""], restriction: "", access: "", price: "", movie: "", bookmark: false, latitude: 0, longitude: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
+        let initialLocation = CLLocation(latitude: locationArray[selectedIndex].latitude, longitude: locationArray[selectedIndex].longitude)
         mapView.centerToLocation(initialLocation)
             // Do any additional setup after loading the view.
          // Make the navigation bar's title with red text.
@@ -44,20 +40,23 @@ class LocationDetailsViewController: UIViewController {
          navigationItem.scrollEdgeAppearance = appearance
          navigationItem.compactAppearance = appearance // For iPhone small navigation bar in landscape.
         
-        imageLocation.image = UIImage(named: locationArray[0].image)
-        subImageLocation1.image = UIImage(named: locationArray[0].image)
-        subImageLocation2.image = UIImage(named: locationArray[0].image)
-        nameLocation.text = locationArray[0].locationName
-        streetLocation.text = locationArray[0].street
-        hourLocation.text = locationArray[0].hours
-        descLocation.text = locationArray[0].description
+        imageLocation.image = UIImage(named: locationArray[selectedIndex].image)
+        subImageLocation1.image = UIImage(named: locationArray[selectedIndex].imageCollection[0])
+        subImageLocation2.image = UIImage(named: locationArray[selectedIndex].imageCollection[1])
+        nameLocation.text = locationArray[selectedIndex].locationName
+        streetLocation.text = locationArray[selectedIndex].street
+        hourLocation.text = locationArray[selectedIndex].hours
+        descLocation.text = locationArray[selectedIndex].description
+        restrictionText.text = locationArray[selectedIndex].restriction
+        estimatedPriceText.text = locationArray[selectedIndex].price
+        accessText.text = locationArray[selectedIndex].access
         
     }
     
     @IBAction func bookmarkTapped(_ sender: Any) {
         DispatchQueue.main.async {
             self.bookmarkButton.image = UIImage(systemName: "bookmark.fill")
-            locationArray[0].bookmark = true
+            locationArray[selectedIndex].bookmark = true
         }
     }
     

@@ -15,8 +15,8 @@ struct Movie {
     var synopsis: String
     var moviePoster: String
     var city: String
-    var locationImage: [Location]
-    var locationName: [Location]
+    var locationImage: [LocationModel]
+    var locationName: [LocationModel]
 }
 
 let movieArray: [Movie] = [

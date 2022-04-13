@@ -89,6 +89,7 @@
                                             <outlet property="locationLabel" destination="7S2-Bd-XzL" id="5Nq-Sl-v2Q"/>
                                             <outlet property="movieLabel" destination="c7b-cR-dwL" id="LBe-9B-4PL"/>
                                             <outlet property="tableImage" destination="QXD-tt-hoQ" id="rZR-4T-bjh"/>
+                                            <segue destination="VS5-QP-1WG" kind="presentation" identifier="showLocDetail" modalPresentationStyle="fullScreen" id="GLj-OG-i2K"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -99,7 +100,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
-                                    <segue destination="ydv-nR-aRi" kind="presentation" modalPresentationStyle="fullScreen" id="D5c-6v-TYo"/>
+                                    <segue destination="Fgl-Pr-jDD" kind="presentation" modalPresentationStyle="fullScreen" id="lp0-pB-Pyw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -122,14 +123,20 @@
             <point key="canvasLocation" x="1618.840579710145" y="67.633928571428569"/>
         </scene>
         <!--locationDetail-->
-        <scene sceneID="dpu-bQ-Xxm">
+        <scene sceneID="1p8-0d-KzB">
             <objects>
-                <viewControllerPlaceholder storyboardName="Location" referencedIdentifier="locationDetail" id="ydv-nR-aRi" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="vFw-x7-N9k"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WB5-wx-Qax" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Location" referencedIdentifier="locationDetail" id="VS5-QP-1WG" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fUc-my-iLu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2276" y="43"/>
+            <point key="canvasLocation" x="2092" y="-45"/>
+        </scene>
+        <!--movieDetail-->
+        <scene sceneID="FwN-VX-AXA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MovieDetails" referencedIdentifier="movieDetail" id="Fgl-Pr-jDD" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="amE-dR-4Y9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2119" y="107"/>
         </scene>
         <!--Bookmark-->
         <scene sceneID="XFA-ch-C1y">
