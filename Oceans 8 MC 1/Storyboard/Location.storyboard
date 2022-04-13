@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rot-Ws-3c3">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +11,7 @@
         <!--Location Details-->
         <scene sceneID="RQx-1H-hPH">
             <objects>
-                <viewController id="Rot-Ws-3c3" customClass="LocationDetailsViewController" customModule="Oceans_8_MC_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="locationDetail" id="Rot-Ws-3c3" customClass="LocationDetailsViewController" customModule="Oceans_8_MC_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xY8-ao-CZV" customClass="location">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -171,12 +170,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Location Details" id="GN6-dh-GeX">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="HgJ-eL-HuL">
-                            <imageReference key="image" image="chevron.backward" catalog="system" symbolScale="default"/>
-                            <connections>
-                                <segue destination="Gix-wl-8sR" kind="presentation" modalPresentationStyle="fullScreen" id="CPG-6S-N8U"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="bookmark" catalog="system" id="oV7-XN-gM1">
                             <connections>
                                 <action selector="bookmarkTapped:" destination="Rot-Ws-3c3" id="dUx-td-mRJ"/>
@@ -203,36 +196,9 @@
             </objects>
             <point key="canvasLocation" x="1327.6923076923076" y="818.957345971564"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="DP1-ox-4Q0">
-            <objects>
-                <navigationController storyboardIdentifier="locationDetail" automaticallyAdjustsScrollViewInsets="NO" id="YQ9-pb-jnQ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BIV-mT-dwX">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Rot-Ws-3c3" kind="relationship" relationship="rootViewController" id="8PI-Ap-3V1"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="D12-PI-r7w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="418.84057971014494" y="819.64285714285711"/>
-        </scene>
-        <!--bookmark-->
-        <scene sceneID="l2h-gW-aXk">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Bookmark" referencedIdentifier="bookmark" id="Gix-wl-8sR" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XTb-s7-erZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="867" y="596"/>
-        </scene>
     </scenes>
     <resources>
         <image name="bookmark" catalog="system" width="112" height="128"/>
-        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

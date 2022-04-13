@@ -21,12 +21,13 @@ class LocationCell: UITableViewCell {
 class MovieDetailsScreen: UIViewController {
     
     @IBOutlet weak var moviePoster: UIImageView!
-    @IBOutlet weak var movieSynopsis: UILabel!
     @IBOutlet weak var genre: UILabel!
     @IBOutlet weak var releaseDate: UILabel!
     @IBOutlet weak var movieTitle: UILabel!
+    @IBOutlet weak var movieSynopsis: UITextView!
     
     var movie = Movie(id: 0, title: "", releaseDate: "", genre: "", synopsis: "", moviePoster: "", city: "", locationImage: [], locationName: [])
+
     var locations: [LocationModel] = []
 
     @IBOutlet weak var TableView: UITableView!
@@ -85,6 +86,9 @@ extension MovieDetailsScreen: UITableViewDataSource, UITableViewDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let destination = segue.destination as? LocationDetailsViewController {
+//            destination.location = locationArray[selectedIndex]
+//        }
         if let destination = segue.destination as? LocationDetailsViewController {
             destination.location = locationArray[selectedIndex]
         }

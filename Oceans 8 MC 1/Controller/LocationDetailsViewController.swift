@@ -23,12 +23,12 @@ class LocationDetailsViewController: UIViewController {
     @IBOutlet weak var accessText: UITextView!
     @IBOutlet weak var bookmarkButton: UIBarButtonItem!
     
-    var location = LocationModel(locationName: "", street: "", hours: "", description: "", image: "", imageCollection: [""], restriction: "", access: "", price: "", movie: "", bookmark: false, latitude: 0, longitude: 0)
+    var location = LocationModel(locationName: "", street: "", hours: "", description: "", image: "", imageCollection: ["", ""], restriction: "", access: "", price: "", movie: "", bookmark: false, latitude: 0, longitude: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let initialLocation = CLLocation(latitude: locationArray[selectedIndex].latitude, longitude: locationArray[selectedIndex].longitude)
+        let initialLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
         mapView.centerToLocation(initialLocation)
             // Do any additional setup after loading the view.
          // Make the navigation bar's title with red text.
@@ -40,16 +40,16 @@ class LocationDetailsViewController: UIViewController {
          navigationItem.scrollEdgeAppearance = appearance
          navigationItem.compactAppearance = appearance // For iPhone small navigation bar in landscape.
         
-        imageLocation.image = UIImage(named: locationArray[selectedIndex].image)
-        subImageLocation1.image = UIImage(named: locationArray[selectedIndex].imageCollection[0])
-        subImageLocation2.image = UIImage(named: locationArray[selectedIndex].imageCollection[1])
-        nameLocation.text = locationArray[selectedIndex].locationName
-        streetLocation.text = locationArray[selectedIndex].street
-        hourLocation.text = locationArray[selectedIndex].hours
-        descLocation.text = locationArray[selectedIndex].description
-        restrictionText.text = locationArray[selectedIndex].restriction
-        estimatedPriceText.text = locationArray[selectedIndex].price
-        accessText.text = locationArray[selectedIndex].access
+        imageLocation.image = UIImage(named: location.image)
+        subImageLocation1.image = UIImage(named: location.imageCollection[0])
+        subImageLocation2.image = UIImage(named: location.imageCollection[1])
+        nameLocation.text = location.locationName
+        streetLocation.text = location.street
+        hourLocation.text = location.hours
+        descLocation.text = location.description
+        restrictionText.text = location.restriction
+        estimatedPriceText.text = location.price
+        accessText.text = location.access
         
     }
     
