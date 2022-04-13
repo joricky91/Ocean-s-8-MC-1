@@ -58,6 +58,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Summary" id="4ql-3p-yAM"/>
+                    <connections>
+                        <segue destination="g1f-aT-q5R" kind="show" identifier="movieDetail" id="VU1-07-udg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sCp-fX-UNz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -82,13 +85,13 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xSg-wk-9wG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2364" y="-36"/>
+            <point key="canvasLocation" x="2397" y="96"/>
         </scene>
         <!--locationDetail-->
         <scene sceneID="0BB-Ad-giD">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="y8d-y8-gqK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="Location" referencedIdentifier="locationDetail" id="ldv-iL-6w4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y8d-y8-gqK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2398" y="260"/>
         </scene>

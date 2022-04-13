@@ -26,7 +26,7 @@ class MovieDetailsScreen: UIViewController {
     @IBOutlet weak var releaseDate: UILabel!
     @IBOutlet weak var movieTitle: UILabel!
     
-    
+    var movie = Movie(id: 0, title: "", releaseDate: "", genre: "", synopsis: "", moviePoster: "", city: "", locationImage: [], locationName: [])
     var locations: [LocationModel] = []
 
     @IBOutlet weak var TableView: UITableView!
@@ -39,23 +39,22 @@ class MovieDetailsScreen: UIViewController {
         TableView.delegate = self
         TableView.dataSource = self
         
-        moviePoster.image = UIImage(named: movieArray[0].moviePoster)
-        movieSynopsis.text = movieArray[0].synopsis
-        movieTitle.text = movieArray[0].title
-        genre.text = movieArray[0].genre
-        releaseDate.text = movieArray[0].releaseDate
+        moviePoster.image = UIImage(named: movie.moviePoster)
+        movieSynopsis.text = movie.synopsis
+        movieTitle.text = movie.title
+        genre.text = movie.genre
+        releaseDate.text = movie.releaseDate
         
     }
     
     func createArray() -> [LocationModel] {
         
         var tempLocations: [LocationModel] = []
-        
-        let location1 = locationArray[0]
-        let location2 = locationArray[1]
+        let locations = locationArray.filter {location in
+            return location.movie == movie.title}
        
-        tempLocations.append(location1)
-        tempLocations.append(location2)
+        tempLocations.append(locations[0])
+        tempLocations.append(locations[1])
         
         return tempLocations
     }

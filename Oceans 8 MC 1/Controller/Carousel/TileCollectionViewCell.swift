@@ -11,6 +11,7 @@ struct TileCollectionViewCellViewModel {
     var title: String?
     let image: UIImage?
     var city: String?
+    let id: Int?
 }
 
 class TileCollectionViewCell: UICollectionViewCell {
