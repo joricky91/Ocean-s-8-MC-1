@@ -28,10 +28,18 @@ class LocationDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //maps
         let initialLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
         mapView.centerToLocation(initialLocation)
-            // Do any additional setup after loading the view.
-         // Make the navigation bar's title with red text.
+        
+        mapView.delegate = self
+        let artwork = Artwork(
+          title: location.locationName,
+          locationName: location.street,
+          discipline: "Sculpture",
+          coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude))
+        mapView.addAnnotation(artwork)
+
          let appearance = UINavigationBarAppearance()
          appearance.configureWithOpaqueBackground()
          appearance.backgroundColor = UIColor.systemBackground
@@ -108,3 +116,53 @@ private extension MKMapView {
     setRegion(coordinateRegion, animated: true)
   }
 }
+
+extension LocationDetailsViewController: MKMapViewDelegate {
+  // 1
+  func mapView(
+    _ mapView: MKMapView,
+    viewFor annotation: MKAnnotation
+  ) -> MKAnnotationView? {
+    // 2
+    guard let annotation = annotation as? Artwork else {
+      return nil
+    }
+    // 3
+    let identifier = "artwork"
+    var view: MKMarkerAnnotationView
+    // 4
+    if let dequeuedView = mapView.dequeueReusableAnnotationView(
+      withIdentifier: identifier) as? MKMarkerAnnotationView {
+      dequeuedView.annotation = annotation
+      view = dequeuedView
+    } else {
+      // 5
+      view = MKMarkerAnnotationView(
+        annotation: annotation,
+        reuseIdentifier: identifier)
+      view.canShowCallout = true
+      view.calloutOffset = CGPoint(x: -5, y: 5)
+      view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+    }
+    return view
+  }
+    
+    
+    func mapView(
+      _ mapView: MKMapView,
+      annotationView view: MKAnnotationView,
+      calloutAccessoryControlTapped control: UIControl
+    ) {
+      guard let artwork = view.annotation as? Artwork else {
+        return
+      }
+
+//mode launch
+//      let launchOptions = [
+//        MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDefault
+//      ]
+      artwork.mapItem?.openInMaps()
+    }
+}
+
+
