@@ -58,10 +58,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Summary" id="4ql-3p-yAM"/>
+                    <connections>
+                        <segue destination="g1f-aT-q5R" kind="presentation" modalPresentationStyle="fullScreen" id="eUY-te-0pP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sCp-fX-UNz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1800.0000000000002" y="95.758928571428569"/>
+            <point key="canvasLocation" x="1761" y="96"/>
         </scene>
         <!--bookmark-->
         <scene sceneID="hm6-nM-4rb">

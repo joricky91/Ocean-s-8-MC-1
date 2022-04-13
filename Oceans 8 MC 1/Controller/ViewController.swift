@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var filteredData: [LocationModel]!
+    var filteredData: [LocationModel] = []
     
     let searchController = UISearchController(searchResultsController: nil)
 
@@ -24,14 +24,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         searchController.searchBar.placeholder = "Search"
         navigationItem.searchController = searchController
         definesPresentationContext = true
-    
         //filter array masih salah
         filteredData = locationArray.filter {
             $0.bookmark == true
         }
+        
         table.dataSource = self
         table.delegate = self
     }
+
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if filteredData.count == 0 {
