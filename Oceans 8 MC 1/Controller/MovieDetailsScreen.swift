@@ -86,11 +86,8 @@ extension MovieDetailsScreen: UITableViewDataSource, UITableViewDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let destination = segue.destination as? LocationDetailsViewController {
-//            destination.location = locationArray[selectedIndex]
-//        }
         if let destination = segue.destination as? LocationDetailsViewController {
-            destination.location = locationArray[selectedIndex]
+            destination.location = locations[selectedIndex]
         }
     }
 }
