@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2EF2814B27FDBB8F008890AF /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF2814A27FDBB8F008890AF /* LocationDetailsViewController.swift */; };
 		2EF2814F27FEA7D8008890AF /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EF2814E27FEA7D8008890AF /* Location.storyboard */; };
+		2EF281512806ADFB008890AF /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF281502806ADFB008890AF /* Artwork.swift */; };
 		4390D7CA27FF10E500E4BFB7 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4390D7C927FF10E500E4BFB7 /* SummaryViewController.swift */; };
 		439288C8280393690006BE4B /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439288C7280393690006BE4B /* CollectionTableViewCell.swift */; };
 		439288CA280397CE0006BE4B /* TileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439288C9280397CE0006BE4B /* TileCollectionViewCell.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		2EF2814A27FDBB8F008890AF /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 		2EF2814E27FEA7D8008890AF /* Location.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
+		2EF281502806ADFB008890AF /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		4390D7C927FF10E500E4BFB7 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		439288C7280393690006BE4B /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		439288C9280397CE0006BE4B /* TileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			children = (
 				5133922C2800184400FC9087 /* Movie.swift */,
 				5133922E280018BA00FC9087 /* LocationModel.swift */,
+				2EF281502806ADFB008890AF /* Artwork.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				439288C8280393690006BE4B /* CollectionTableViewCell.swift in Sources */,
 				2EF2814B27FDBB8F008890AF /* LocationDetailsViewController.swift in Sources */,
 				4390D7CA27FF10E500E4BFB7 /* SummaryViewController.swift in Sources */,
+				2EF281512806ADFB008890AF /* Artwork.swift in Sources */,
 				4E16E84F27FEC8C300443918 /* MovieDetailsScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
