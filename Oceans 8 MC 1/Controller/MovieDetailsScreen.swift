@@ -26,7 +26,7 @@ class MovieDetailsScreen: UIViewController {
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var movieSynopsis: UITextView!
     
-    var movie = Movie(id: 0, title: "", releaseDate: "", genre: "", synopsis: "", moviePoster: "", city: "", locationImage: [], locationName: [])
+    var movie = Movie(id: 0, title: "", releaseDate: "", genre: "", synopsis: "", moviePoster: "", moviePosterLandscape: "", city: "", locationImage: [], locationName: [])
 
     var locations: [LocationModel] = []
 

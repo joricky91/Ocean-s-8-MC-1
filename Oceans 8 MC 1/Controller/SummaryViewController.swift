@@ -8,7 +8,7 @@ import UIKit
 
 class SummaryViewController: UIViewController, UISearchBarDelegate, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate {
     let searchController = UISearchController(searchResultsController: nil)
-    var selectedMovie = Movie(id: 0, title: "", releaseDate: "", genre: "", synopsis: "", moviePoster: "", city: "", locationImage: [], locationName: [])
+    var selectedMovie = Movie(id: 0, title: "", releaseDate: "", genre: "", synopsis: "", moviePoster: "", moviePosterLandscape: "", city: "", locationImage: [], locationName: [])
     private let tableView: UITableView = {
         let table = UITableView()
         table.register(CollectionTableViewCell.self, forCellReuseIdentifier: CollectionTableViewCell.identifier)
@@ -73,7 +73,7 @@ class SummaryViewController: UIViewController, UISearchBarDelegate, UISearchResu
     
     func contentLoop() {
         for movie in movieArray {
-            viewModels[0].viewModels.append(TileCollectionViewCellViewModel(title: "", image: UIImage(named: movie.moviePoster), city: "", id: movie.id ))
+            viewModels[0].viewModels.append(TileCollectionViewCellViewModel(title: "", image: UIImage(named: movie.moviePosterLandscape), city: "", id: movie.id ))
             if movie.genre == "Anime" {
                 viewModels[1].viewModels.append(TileCollectionViewCellViewModel(title: movie.title, image: UIImage(named: movie.moviePoster), city: movie.city, id: movie.id ))
             } else if movie.genre == "Drama" {
