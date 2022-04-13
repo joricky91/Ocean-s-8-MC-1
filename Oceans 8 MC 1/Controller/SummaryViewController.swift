@@ -8,7 +8,7 @@ import UIKit
 
 class SummaryViewController: UIViewController, UISearchBarDelegate, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate {
     let searchController = UISearchController(searchResultsController: nil)
-    
+    var selectedMovie = Movie(id: 0, title: "", releaseDate: "", genre: "", synopsis: "", moviePoster: "", city: "", locationImage: [], locationName: [])
     private let tableView: UITableView = {
         let table = UITableView()
         table.register(CollectionTableViewCell.self, forCellReuseIdentifier: CollectionTableViewCell.identifier)
@@ -77,23 +77,16 @@ class SummaryViewController: UIViewController, UISearchBarDelegate, UISearchResu
     
     func contentLoop() {
         for movie in movieArray {
-            viewModels[0].viewModels.append(TileCollectionViewCellViewModel(title: "", image: UIImage(named: movie.moviePoster), city: "" ))
+            viewModels[0].viewModels.append(TileCollectionViewCellViewModel(title: "", image: UIImage(named: movie.moviePoster), city: "", id: movie.id ))
             if movie.genre == "Anime" {
-                viewModels[1].viewModels.append(TileCollectionViewCellViewModel(title: movie.title, image: UIImage(named: movie.moviePoster), city: movie.city ))
+                viewModels[1].viewModels.append(TileCollectionViewCellViewModel(title: movie.title, image: UIImage(named: movie.moviePoster), city: movie.city, id: movie.id ))
             } else if movie.genre == "Drama" {
-                viewModels[2].viewModels.append(TileCollectionViewCellViewModel(title: movie.title, image: UIImage(named: movie.moviePoster), city: movie.city ))
+                viewModels[2].viewModels.append(TileCollectionViewCellViewModel(title: movie.title, image: UIImage(named: movie.moviePoster), city: movie.city, id: movie.id ))
             } else {
-                viewModels[3].viewModels.append(TileCollectionViewCellViewModel(title: movie.title, image: UIImage(named: movie.moviePoster), city: movie.city ))
+                viewModels[3].viewModels.append(TileCollectionViewCellViewModel(title: movie.title, image: UIImage(named: movie.moviePoster), city: movie.city, id: movie.id ))
             }
         }
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.destination is MovieDetailsScreen {
-//            let movieDetail = segue.destination as? MovieDetailsScreen
-//            movieDetail.username = “Arthur Dent”
-//        }
-//    }
 }
 
 extension SummaryViewController: CollectionTableViewCellDelegate {
@@ -102,19 +95,13 @@ extension SummaryViewController: CollectionTableViewCellDelegate {
     }
     
     func collectionTableViewCellDidTapItem(with viewModel: TileCollectionViewCellViewModel) {
-//        let alert = UIAlertController(title: viewModel.title, message: "clicked", preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "Dismiss", style:. cancel, handler: nil))
-//        present(alert, animated: true)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let secondVC = storyboard.instantiateViewController(identifier: "MovieDetailsScreen")
-        
-        secondVC.modalPresentationStyle = .fullScreen
-        secondVC.modalTransitionStyle = .crossDissolve
-        
-        present(secondVC, animated: true, completion: nil)
-        
-//        MovieDetailsScreen().modalPresentationStyle = .fullScreen
-//        present(MovieDetailsScreen(), animated: true)
-//
+        selectedMovie = movieArray.first(where: {$0.id == viewModel.id})!
+        performSegue(withIdentifier: "movieDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? MovieDetailsScreen {
+            destination.movie = selectedMovie
+        }
     }
 }
