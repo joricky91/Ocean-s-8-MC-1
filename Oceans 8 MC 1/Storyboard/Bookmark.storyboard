@@ -76,15 +76,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="p9U-UU-rJw">
-                                <rect key="frame" x="0.0" y="426" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <segue destination="Fgl-Pr-jDD" kind="show" id="lp0-pB-Pyw"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SF9-1Z-BFZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -113,16 +104,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUc-my-iLu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2092" y="-45"/>
-        </scene>
-        <!--movieDetail-->
-        <scene sceneID="FwN-VX-AXA">
-            <objects>
-                <viewControllerPlaceholder storyboardName="MovieDetails" referencedIdentifier="movieDetail" id="Fgl-Pr-jDD" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="3vI-XV-yJI"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="amE-dR-4Y9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2119" y="107"/>
         </scene>
         <!--Bookmark-->
         <scene sceneID="XFA-ch-C1y">

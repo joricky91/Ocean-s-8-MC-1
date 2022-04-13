@@ -13,8 +13,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var searchBar: UISearchBar!
     
     var filteredData: [LocationModel] = []
-    
+    var temp: [LocationModel] = []
     let searchController = UISearchController(searchResultsController: nil)
+    
+    var location = LocationModel(locationName: "", street: "", hours: "", description: "", image: "", imageCollection: ["", ""], restriction: "", access: "", price: "", movie: "", bookmark: false, latitude: 0, longitude: 0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         filteredData = locationArray.filter {
             $0.bookmark == true
         }
+        
+        temp = filteredData
         
         table.dataSource = self
         table.delegate = self
@@ -61,12 +65,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let searchText = searchController.searchBar.text!
         
         filteredData = []
-        
+    
         if searchText == "" {
-            filteredData = locationArray
+            filteredData = temp
         }
         
-        for locationName in locationArray {
+        for locationName in temp {
             if locationName.locationName.lowercased().contains(searchText.lowercased()) {
                 filteredData.append(locationName)
             }
@@ -83,6 +87,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? LocationDetailsViewController {
             destination.location = locationArray[selectedIndex]
+            print(selectedIndex)
         }
     }
     
