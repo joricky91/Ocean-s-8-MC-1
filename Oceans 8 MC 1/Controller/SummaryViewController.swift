@@ -15,27 +15,16 @@ class SummaryViewController: UIViewController, UISearchBarDelegate, UISearchResu
         return table
     }()
 
-    private let viewModels: [CollectionTableViewCellViewModel] = [
-        CollectionTableViewCellViewModel(viewModels: [
-            TileCollectionViewCellViewModel(title: "", image: UIImage(named: "indonesia"), city: ""),
-            TileCollectionViewCellViewModel(title: "", image: UIImage(named: "korea"), city: ""),
-            TileCollectionViewCellViewModel(title: "", image: UIImage(named: "tokyo"), city: "")
-        ], category: "TRENDING OF THE WEEK"), CollectionTableViewCellViewModel(viewModels: [
-            TileCollectionViewCellViewModel(title: movieArray[1].title, image: UIImage(named: movieArray[1].moviePoster), city: movieArray[1].city),
-            TileCollectionViewCellViewModel(title: movieArray[2].title, image: UIImage(named: movieArray[2].moviePoster), city: movieArray[2].city),
-            TileCollectionViewCellViewModel(title: "Japan", image: UIImage(named: "tokyo"), city: "Tokyo")
-        ], category: "ANIME"), CollectionTableViewCellViewModel(viewModels: [
-            TileCollectionViewCellViewModel(title: movieArray[0].title, image: UIImage(named: movieArray[0].moviePoster), city: movieArray[0].city),
-            TileCollectionViewCellViewModel(title: "South Korea", image: UIImage(named: "korea"), city: "Seoul"),
-            TileCollectionViewCellViewModel(title: "Japan", image: UIImage(named: "tokyo"), city: "Tokyo")
-        ], category: "DRAMA"), CollectionTableViewCellViewModel(viewModels: [
-            TileCollectionViewCellViewModel(title: "Indonesia", image: UIImage(named: "indonesia"), city: "Bali"),
-            TileCollectionViewCellViewModel(title: "South Korea", image: UIImage(named: "korea"), city: "Seoul")
-        ], category: "MOVIES")
+    private var viewModels: [CollectionTableViewCellViewModel] = [
+        CollectionTableViewCellViewModel(viewModels: [], category: "TRENDING OF THE WEEK"),
+        CollectionTableViewCellViewModel(viewModels: [], category: "ANIME"),
+        CollectionTableViewCellViewModel(viewModels: [], category: "DRAMA"),
+        CollectionTableViewCellViewModel(viewModels: [], category: "MOVIES")
     ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        contentLoop()
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
@@ -73,7 +62,6 @@ class SummaryViewController: UIViewController, UISearchBarDelegate, UISearchResu
             fatalError()
         }
         cell.delegate = self
-        
         cell.configure(with: viewModel)
         cell.layoutMargins = UIEdgeInsets.zero
         cell.separatorInset = UIEdgeInsets.zero
@@ -86,7 +74,26 @@ class SummaryViewController: UIViewController, UISearchBarDelegate, UISearchResu
         }
         return 245
     }
-
+    
+    func contentLoop() {
+        for movie in movieArray {
+            viewModels[0].viewModels.append(TileCollectionViewCellViewModel(title: "", image: UIImage(named: movie.moviePoster), city: "" ))
+            if movie.genre == "Anime" {
+                viewModels[1].viewModels.append(TileCollectionViewCellViewModel(title: movie.title, image: UIImage(named: movie.moviePoster), city: movie.city ))
+            } else if movie.genre == "Drama" {
+                viewModels[2].viewModels.append(TileCollectionViewCellViewModel(title: movie.title, image: UIImage(named: movie.moviePoster), city: movie.city ))
+            } else {
+                viewModels[3].viewModels.append(TileCollectionViewCellViewModel(title: movie.title, image: UIImage(named: movie.moviePoster), city: movie.city ))
+            }
+        }
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.destination is MovieDetailsScreen {
+//            let movieDetail = segue.destination as? MovieDetailsScreen
+//            movieDetail.username = “Arthur Dent”
+//        }
+//    }
 }
 
 extension SummaryViewController: CollectionTableViewCellDelegate {
@@ -95,8 +102,19 @@ extension SummaryViewController: CollectionTableViewCellDelegate {
     }
     
     func collectionTableViewCellDidTapItem(with viewModel: TileCollectionViewCellViewModel) {
-        let alert = UIAlertController(title: viewModel.title, message: "clicked", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Dismiss", style:. cancel, handler: nil))
-        present(alert, animated: true)
+//        let alert = UIAlertController(title: viewModel.title, message: "clicked", preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: "Dismiss", style:. cancel, handler: nil))
+//        present(alert, animated: true)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let secondVC = storyboard.instantiateViewController(identifier: "MovieDetailsScreen")
+        
+        secondVC.modalPresentationStyle = .fullScreen
+        secondVC.modalTransitionStyle = .crossDissolve
+        
+        present(secondVC, animated: true, completion: nil)
+        
+//        MovieDetailsScreen().modalPresentationStyle = .fullScreen
+//        present(MovieDetailsScreen(), animated: true)
+//
     }
 }
