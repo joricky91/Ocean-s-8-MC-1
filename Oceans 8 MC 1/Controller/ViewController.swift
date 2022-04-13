@@ -12,18 +12,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    struct Bookmark {
-        let imageName: String
-        let location: String
-        let movie: String
-    }
-    
-//    let data: [Bookmark] = [
-//        Bookmark(imageName: "tokyo", location: "Tokyo", movie: "Kimi no na Wa"),
-//        Bookmark(imageName: "indonesia", location: "Indonesia", movie: "Laskar Pelangi"),
-//        Bookmark(imageName: "korea", location: "Korea", movie: "Drakor")
-//    ]
-    
     var filteredData: [LocationModel]!
     
     let searchController = UISearchController(searchResultsController: nil)
@@ -86,7 +74,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.table.reloadData()
     }
     
-    //location detail
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndex = indexPath.row
+        performSegue(withIdentifier: "showLocDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? LocationDetailsViewController {
+            destination.location = locationArray[selectedIndex]
+        }
+    }
     
 }
 

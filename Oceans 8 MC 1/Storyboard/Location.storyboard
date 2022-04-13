@@ -66,7 +66,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I6j-KU-3xN">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I6j-KU-3xN">
                                                 <rect key="frame" x="16" y="304" width="170" height="125"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <userDefinedRuntimeAttributes>
@@ -80,7 +80,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                             </view>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6WB-c0-VMB">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6WB-c0-VMB">
                                                 <rect key="frame" x="205" y="304" width="170" height="125"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <userDefinedRuntimeAttributes>
@@ -185,7 +185,7 @@
                     </navigationItem>
                     <size key="freeformSize" width="390" height="1000"/>
                     <connections>
-                        <outlet property="accessLocation" destination="wC8-90-Klf" id="zgI-VD-DRj"/>
+                        <outlet property="accessText" destination="q0y-wI-E4T" id="hR8-22-u6Q"/>
                         <outlet property="bookmarkButton" destination="oV7-XN-gM1" id="hrs-Ni-CBc"/>
                         <outlet property="descLocation" destination="jVT-g6-nV7" id="gQo-pb-XXv"/>
                         <outlet property="estimatedPriceText" destination="zKG-Wn-LzF" id="dGb-6M-ntr"/>

@@ -21,11 +21,11 @@ class SummaryViewController: UIViewController, UISearchBarDelegate, UISearchResu
             TileCollectionViewCellViewModel(title: "", image: UIImage(named: "korea"), city: ""),
             TileCollectionViewCellViewModel(title: "", image: UIImage(named: "tokyo"), city: "")
         ], category: "TRENDING OF THE WEEK"), CollectionTableViewCellViewModel(viewModels: [
-            TileCollectionViewCellViewModel(title: "Indonesia", image: UIImage(named: "indonesia"), city: "Bali"),
-            TileCollectionViewCellViewModel(title: "South Korea", image: UIImage(named: "korea"), city: "Seoul"),
+            TileCollectionViewCellViewModel(title: movieArray[1].title, image: UIImage(named: movieArray[1].moviePoster), city: movieArray[1].city),
+            TileCollectionViewCellViewModel(title: movieArray[2].title, image: UIImage(named: movieArray[2].moviePoster), city: movieArray[2].city),
             TileCollectionViewCellViewModel(title: "Japan", image: UIImage(named: "tokyo"), city: "Tokyo")
         ], category: "ANIME"), CollectionTableViewCellViewModel(viewModels: [
-            TileCollectionViewCellViewModel(title: "Indonesia", image: UIImage(named: "indonesia"), city: "Bali"),
+            TileCollectionViewCellViewModel(title: movieArray[0].title, image: UIImage(named: movieArray[0].moviePoster), city: movieArray[0].city),
             TileCollectionViewCellViewModel(title: "South Korea", image: UIImage(named: "korea"), city: "Seoul"),
             TileCollectionViewCellViewModel(title: "Japan", image: UIImage(named: "tokyo"), city: "Tokyo")
         ], category: "DRAMA"), CollectionTableViewCellViewModel(viewModels: [
